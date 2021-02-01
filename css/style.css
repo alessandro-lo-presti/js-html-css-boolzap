@@ -186,7 +186,7 @@ i {
 }
 
 .chat-top-icons i {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 /* chat-middle */
@@ -194,6 +194,7 @@ i {
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
   background-size: auto;
+  overflow-y: scroll;
 }
 
 /* chat-down */
