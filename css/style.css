@@ -38,7 +38,7 @@ i {
   background-color: #eaeaea;
 }
 
-.left > div{
+.left > div:not(.search, .contacts){
   padding: 15px 10px;
 }
 
@@ -99,6 +99,35 @@ i {
   text-decoration: underline;
 }
 
+/* search */
+.search {
+  padding: 10px;
+}
+
+.search-box {
+  padding: 10px 0 10px 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.search-box i {
+  font-size: 20px;
+}
+
+.search-box input {
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  width: 280px;
+  font-size: 15px;
+}
+
+/* contacts */
+.contacts {
+  flex-grow: 1;
+  background-color: white;
+}
 
 /* right */
 .right {
