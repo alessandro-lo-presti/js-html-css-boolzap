@@ -30,12 +30,16 @@ i {
   display: flex;
 }
 
+.container > div {
+  display: flex;
+  flex-direction: column;
+}
+
 /* left */
 .left {
   flex-basis: calc(100% / 3 + 50px);
-  display: flex;
-  flex-direction: column;
   background-color: #eaeaea;
+  border-right: 1px solid lightgrey;
 }
 
 .left > div:not( .contacts){
@@ -152,5 +156,35 @@ i {
 /* right */
 .right {
   flex-grow: 1;
-  background-color: blue;
+}
+
+/* chat-top */
+.chat-top {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+}
+
+.chat-top-img img {
+  width: 65px;
+  border-radius: 50%;
+}
+
+.chat-top-contact {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.chat-top-contact .c-down {
+  font-size: 15px;
+  color: grey;
+}
+
+.chat-top-icons {
+  font-size: 25px;
+}
+
+.chat-top-icons i {
+  padding-right: 10px;
 }
