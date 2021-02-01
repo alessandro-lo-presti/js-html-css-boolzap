@@ -123,7 +123,7 @@ i {
   margin-left: 20px;
   border: none;
   outline: none;
-  width: 280px;
+  width: 100%;
   font-size: 15px;
 }
 
@@ -187,4 +187,35 @@ i {
 
 .chat-top-icons i {
   padding-right: 10px;
+}
+
+/* chat-middle */
+.chat-middle {
+  flex-grow: 1;
+  background-image: url("../img/mine.jpg");
+  background-size: auto;
+}
+
+/* chat-down */
+.chat-down {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+}
+
+.chat-down i {
+  font-size: 30px;
+  padding: 0 30px;
+  color: grey;
+}
+
+.chat-down-message {
+  flex-grow: 1;
+}
+
+.chat-down-message input{
+  height: 60px;
+  width: 100%;
+  font-size: 17px;
 }
