@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(#dddbd1, #d2dbdc); */
+  background-color: #dddbd1;
+}
+
+/* header */
+header {
+  height: 100px;
+  background-color: #009688;
+}
+
+.container {
+  width: 950px;
+  height: calc(100vh - 40px);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  display: flex;
+}
+
+.left {
+  width: calc(100% / 3);
+  background-color: red;
+}
+
+.right {
+  flex-grow: 1;
+  background-color: blue;
+}
