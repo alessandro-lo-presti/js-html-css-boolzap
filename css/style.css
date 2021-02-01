@@ -109,18 +109,23 @@ i {
 }
 
 .search-box {
-  padding: 10px 0 10px 15px;
   background-color: white;
   display: flex;
   align-items: center;
+  border: 1px solid lightgrey;
 }
 
-.search-box i {
+.search-icon {
+  padding: 10px 20px;
+  border-right: 1px solid lightgrey;
+}
+
+.search-icon i {
   font-size: 20px;
 }
 
 .search-box input {
-  margin-left: 20px;
+  margin-left: 10px;
   border: none;
   outline: none;
   width: 100%;
