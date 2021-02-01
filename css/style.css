@@ -38,8 +38,8 @@ i {
   background-color: #eaeaea;
 }
 
-.left > div:not(.search, .contacts){
-  padding: 15px 10px;
+.left > div:not( .contacts){
+  padding: 10px;
 }
 
 /* user */
@@ -55,7 +55,7 @@ i {
 
 .user-name {
   flex-grow: 1;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .user-icons {
@@ -127,6 +127,26 @@ i {
 .contacts {
   flex-grow: 1;
   background-color: white;
+  overflow-y: scroll;
+}
+
+.contact {
+  padding: 10px;
+  display: flex;
+  font-size: 17px;
+}
+
+.contact:not(:first-child) {
+  border-top: 1px solid #eaeaea;
+}
+
+.contact img {
+  width: 65px;
+  border-radius: 50%;
+}
+
+.contact-chatbox {
+  padding-left: 15px;
 }
 
 /* right */
