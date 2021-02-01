@@ -86,15 +86,11 @@ i {
 }
 
 .notifications-text {
+  padding-left: 15px;
   flex-grow: 1;
   position: relative;
-}
-
-.notifications-text > div {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%)
+  display: flex;
+  align-items: center;
 }
 
 .notifications-text .not-down {
