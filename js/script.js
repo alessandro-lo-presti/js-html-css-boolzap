@@ -19,7 +19,7 @@ var app = new Vue({
           },
           {
             date:   '10/01/2020   15:50',
-            text:   'Ricordati   di   dargli   da   mangiare', status:   'sent'
+            text:   'Ricordati   di   dargli   da   mangiare.', status:   'sent'
           },
           {
             date:   '10/01/2020   16:15',
