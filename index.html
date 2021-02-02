@@ -43,7 +43,7 @@
         <!-- / user -->
 
         <!-- notifications -->
-        <div class="notifications" @click="switchNotification" :class="notification ? 'active' : ''">
+        <div class="notifications clickable" @click="switchNotification" :class="notification ? 'active' : ''">
 
           <div class="notifications-icon">
             <i v-if="notification" class="fas fa-bell"></i>
@@ -72,7 +72,7 @@
 
           <div class="search-box">
 
-            <div class="search-icon">
+            <div class="search-icon clickable">
               <i class="fas fa-search"></i>
             </div>
 
@@ -88,7 +88,7 @@
         <!-- contacts -->
         <div class="contacts">
 
-          <div v-for="(contact, index) in contacts" class="contact" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
+          <div v-for="(contact, index) in contacts" class="contact clickable" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
 
             <div class="contact-img">
               <img :src="contact.img" alt="contact-img">

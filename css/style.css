@@ -20,6 +20,10 @@ i {
   color: #b1b1b1;
 }
 
+i, img, .clickable {
+  cursor: pointer;
+}
+
 .container {
   width: 950px;
   height: calc(100vh - 40px);
