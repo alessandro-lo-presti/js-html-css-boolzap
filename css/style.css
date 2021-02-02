@@ -157,7 +157,17 @@ i {
 .contact-chatbox {
   padding-left: 15px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-last-message {
+  width: 200px;
+  font-size: 13px;
+  color: grey;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* right */
@@ -214,8 +224,8 @@ i {
 }
 
 .message {
-  max-width: calc(50% - 20px);
-  padding: 5px 15px 10px;
+  max-width: calc(50% - 50px);
+  padding: 5px 15px 15px;
   margin-bottom: 20px;
   border-radius: 5px;
   position: relative;
@@ -234,7 +244,7 @@ i {
 }
 
 .message-text {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .message-setting {

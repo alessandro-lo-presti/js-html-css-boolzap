@@ -95,6 +95,11 @@
 
             <div class="contact-chatbox">
               {{ contact.name }}
+              <div class="contact-last-message">
+                {{
+                  contact.messages[contact.messages.length-1].text
+                }}
+              </div>
             </div>
 
           </div>
@@ -139,10 +144,10 @@
           <!-- chat -->
           <div class="chat-middle">
 
-            <div class="message message-sent">
+            <div class="message" v-for="mex in contact.messages" :class="(mex.status == 'sent') ? 'message-sent' : 'message-received'">
 
               <div class="message-text">
-                mario
+                {{ mex.text }}
               </div>
 
               <div class="message-setting">
@@ -150,15 +155,15 @@
               </div>
 
               <div class="message-time">
-                22:00
+                {{ mex.date }}
               </div>
 
             </div>
 
-            <div class="message message-received">
+            <!-- <div class="message message-received">
 
               <div class="message-text">
-                mario
+                mario mario mario mario mario
               </div>
 
               <div class="message-setting">
@@ -169,7 +174,7 @@
                 22:01
               </div>
 
-            </div>
+            </div> -->
 
           </div>
           <!-- / chat -->
