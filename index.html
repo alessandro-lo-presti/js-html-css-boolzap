@@ -43,10 +43,11 @@
         <!-- / user -->
 
         <!-- notifications -->
-        <div class="notifications">
+        <div class="notifications" @click="switchNotification" :class="notification ? 'active' : ''">
 
           <div class="notifications-icon">
-            <i class="fas fa-bell-slash"></i>
+            <i v-if="notification" class="fas fa-bell"></i>
+            <i v-else class="fas fa-bell-slash"></i>
           </div>
 
           <div class="notifications-text">

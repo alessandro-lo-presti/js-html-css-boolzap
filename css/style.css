@@ -76,13 +76,26 @@ i {
   background-color: #8edafc;
 }
 
-.notifications i {
+.notifications.active {
+  background-color: white;
+}
+
+.notifications-icon i {
+  width: 57.5px;
   /* margin-left: 15px; */
   padding: 15px 10px;
   font-size: 30px;
   background-color: white;
   border-radius: 50%;
   color: #8edafc;
+  display: flex;
+  justify-content: center;
+}
+
+.notifications.active .notifications-icon i {
+  padding: 15px 15.125px;
+  background-color: #8edafc;
+  color: white;
 }
 
 .notifications-text {

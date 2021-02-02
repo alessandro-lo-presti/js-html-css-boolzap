@@ -1,6 +1,7 @@
 var app = new Vue({
   el: "#app",
   data: {
+    notification: false,
     user:{
       name: "Gianna",
       img: "img/avatar_io.jpg"
@@ -90,6 +91,11 @@ var app = new Vue({
     ]
   },
   methods: {
+    // accendere/spegnere notifiche
+    switchNotification() {
+      console.log(this.notification);
+      (this.notification) ? this.notification = false : this.notification = true;
+    },
     // cambiare utente in chatbox
     changeChat(index) {
       if(this.contacts[index].current_chat != true) {
