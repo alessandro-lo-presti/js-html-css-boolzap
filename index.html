@@ -87,7 +87,7 @@
         <!-- contacts -->
         <div class="contacts">
 
-          <div v-for="(contact, index) in contacts" class="contact" @click="changeChat(index)">
+          <div v-for="(contact, index) in contacts" class="contact" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
 
             <div class="contact-img">
               <img :src="contact.img" alt="contact-img">
@@ -114,7 +114,7 @@
           <div class="chat-top">
 
             <div class="chat-top-img">
-              <img :src="contact.img" alt="contact-img" >
+              <img :src="contact.img" alt="contact-img">
             </div>
 
             <div class="chat-top-contact">

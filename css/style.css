@@ -141,6 +141,10 @@ i {
   font-size: 17px;
 }
 
+.contact.active {
+  background-color: #8edafc;
+}
+
 .contact:not(:first-child) {
   border-top: 1px solid #eaeaea;
 }
