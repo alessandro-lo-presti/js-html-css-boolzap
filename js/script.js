@@ -2,7 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     user:{
-      name: "Jane Doe",
+      name: "Jane",
       img: "img/avatar_io.jpg"
     },
     contacts: [
@@ -33,16 +33,13 @@ var app = new Vue({
     changeChat(index) {
       if(this.contacts[index].current_chat != true) {
 
-        const contact = this.contacts.splice(index, 1)[0];
-        contact.current_chat = true
-
         this.contacts.forEach((element) => {
           if(element.current_chat == true) {
             element.current_chat = false;
           }
         });
 
-        this.contacts.splice(index, 0, contact);
+        this.contacts[index].current_chat = true;
       }
     }
   }
