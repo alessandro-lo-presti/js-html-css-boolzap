@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   </head>
 
   <body>
 
     <header></header>
 
-    <div class="container">
+    <div class="container" id="app">
 
       <!-- left -->
       <div class="left">
@@ -25,11 +26,11 @@
         <div class="user">
 
           <div class="user-img">
-            <img src="img/avatar_io.jpg" alt="user-img">
+            <img :src="user.img" alt="user-img">
           </div>
 
           <div class="user-name">
-            <span>Nome Utente</span>
+            <span>{{ user.name}}</span>
           </div>
 
           <div class="user-icons">
@@ -86,50 +87,14 @@
         <!-- contacts -->
         <div class="contacts">
 
-          <div class="contact">
+          <div v-for="(contact, index) in contacts" class="contact" @click="changeChat(index)">
 
             <div class="contact-img">
-              <img src="img/avatar_1.jpg" alt="contact-img">
+              <img :src="contact.img" alt="contact-img">
             </div>
 
             <div class="contact-chatbox">
-              Michele
-            </div>
-
-          </div>
-
-          <div class="contact">
-
-            <div class="contact-img">
-              <img src="img/avatar_2.jpg" alt="contact-img">
-            </div>
-
-            <div class="contact-chatbox">
-              Fabio
-            </div>
-
-          </div>
-
-          <div class="contact">
-
-            <div class="contact-img">
-              <img src="img/avatar_3.jpg" alt="contact-img">
-            </div>
-
-            <div class="contact-chatbox">
-              Samuele
-            </div>
-
-          </div>
-
-          <div class="contact">
-
-            <div class="contact-img">
-              <img src="img/avatar_4.jpg" alt="contact-img">
-            </div>
-
-            <div class="contact-chatbox">
-              Giorgio
+              {{ contact.name }}
             </div>
 
           </div>
@@ -141,62 +106,71 @@
       <!-- / left -->
 
       <!-- right -->
-      <div class="right">
+      <div class="right" >
 
-        <!-- chat-top -->
-        <div class="chat-top">
+        <div class="right-container" v-for="contact in contacts" v-if="contact.current_chat">
 
-          <div class="chat-top-img">
-            <img src="img/avatar_1.jpg" alt="contact-img">
-          </div>
+          <!-- chat-top -->
+          <div class="chat-top">
 
-          <div class="chat-top-contact">
-            <div class="c-top">
-              Michele
+            <div class="chat-top-img">
+              <img :src="contact.img" alt="contact-img" >
             </div>
 
-            <div class="c-down">
-              Ultimo accesso alle
+            <div class="chat-top-contact">
+              <div class="c-top">
+                {{ contact.name }}
+              </div>
+
+              <div class="c-down">
+                Ultimo accesso alle
+              </div>
             </div>
-          </div>
 
-          <div class="chat-top-icons">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-paperclip"></i>
-            <i class="fas fa-ellipsis-v"></i>
+            <div class="chat-top-icons">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
           </div>
+          <!-- / chat-top -->
+
+          <!-- chat -->
+          <div class="chat-middle">
+
+          </div>
+          <!-- / chat -->
+
+          <!-- chat-down -->
+          <div class="chat-down">
+
+            <div class="chat-down-emoji">
+              <i class="far fa-smile"></i>
+            </div>
+
+            <div class="chat-down-message">
+              <input type="text" placeholder="Scrivi un messaggio">
+            </div>
+
+            <div class="chat-down-audio">
+              <i class="fas fa-microphone"></i>
+            </div>
+
+          </div>
+          <!-- / chat-down -->
 
         </div>
-        <!-- / chat-top -->
 
-        <!-- chat -->
-        <div class="chat-middle">
-
-        </div>
-        <!-- / chat -->
-
-        <!-- chat-down -->
-        <div class="chat-down">
-
-          <div class="chat-down-emoji">
-            <i class="far fa-smile"></i>
-          </div>
-
-          <div class="chat-down-message">
-            <input type="text" placeholder="Scrivi un messaggio">
-          </div>
-
-          <div class="chat-down-audio">
-            <i class="fas fa-microphone"></i>
-          </div>
-
-        </div>
-        <!-- / chat-down -->
 
       </div>
       <!-- / right -->
 
     </div>
+
+    <!-- js -->
+    <script src="js/script.js" charset="utf-8"></script>
+    <!-- / js -->
 
   </body>
 
