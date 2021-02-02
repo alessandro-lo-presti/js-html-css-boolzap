@@ -204,10 +204,29 @@ i {
 
 /* chat-middle */
 .chat-middle {
+  padding: 20px 30px;
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
   background-size: auto;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.message-received {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.message-send {
+  background-color: #dbf8c5;
+  align-self: flex-end;
 }
 
 /* chat-down */
