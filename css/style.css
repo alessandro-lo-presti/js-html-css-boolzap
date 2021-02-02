@@ -224,7 +224,7 @@ i {
 }
 
 .message {
-  max-width: calc(50% - 50px);
+  max-width: calc(50% - 20px);
   padding: 5px 15px 15px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -268,9 +268,14 @@ i {
   background-color: #eaeaea;
 }
 
+.chat-down > div:not(.chat-dow-message) {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+
 .chat-down i {
   font-size: 30px;
-  padding: 0 30px;
   color: grey;
 }
 
