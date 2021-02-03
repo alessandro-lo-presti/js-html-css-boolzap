@@ -6,6 +6,7 @@ var app = new Vue({
       name: "Gianna",
       img: "img/avatar_io.jpg"
     },
+    userMessage: "",
     contacts: [
       {
         name: "Michele",
@@ -90,12 +91,17 @@ var app = new Vue({
       }
     ]
   },
+  created() {
+    moment.locale('it');
+  },
   methods: {
+
     // accendere/spegnere notifiche
     switchNotification() {
       console.log(this.notification);
       (this.notification) ? this.notification = false : this.notification = true;
     },
+
     // cambiare utente in chatbox
     changeChat(index) {
       if(this.contacts[index].current_chat != true) {
@@ -108,6 +114,18 @@ var app = new Vue({
 
         this.contacts[index].current_chat = true;
       }
+    },
+
+    // invio messaggio dell'utente
+    sendUserMessage(contact) {
+      const timeMessage = moment().format('L') + " " + moment().format('LT');
+      const newMessage = {
+        date: timeMessage,
+        text: this.userMessage,
+        status: "sent"
+      };
+      contact.messages.push(newMessage);
     }
+
   }
 });

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
   </head>
 
   <body>
@@ -114,6 +115,7 @@
       <!-- right -->
       <div class="right" >
 
+        <!-- right-container -->
         <div class="right-container" v-for="contact in contacts" v-if="contact.current_chat">
 
           <!-- chat-top -->
@@ -145,10 +147,10 @@
           <!-- chat -->
           <div class="chat-middle">
 
-            <div class="message" v-for="mex in contact.messages" :class="(mex.status == 'sent') ? 'message-sent' : 'message-received'">
+            <div class="message" v-for="message in contact.messages" :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
 
               <div class="message-text">
-                {{ mex.text }}
+                {{ message.text }}
               </div>
 
               <div class="message-setting">
@@ -156,7 +158,7 @@
               </div>
 
               <div class="message-time">
-                {{ mex.date }}
+                {{ message.date }}
               </div>
 
             </div>
@@ -172,7 +174,7 @@
             </div>
 
             <div class="chat-down-message">
-              <input type="text" placeholder="Scrivi un messaggio">
+              <input type="text" placeholder="Scrivi un messaggio" v-model="userMessage" @keydown.enter="sendUserMessage(contact)">
             </div>
 
             <div class="chat-down-audio">
@@ -183,7 +185,7 @@
           <!-- / chat-down -->
 
         </div>
-
+        <!-- / right-container -->
 
       </div>
       <!-- / right -->

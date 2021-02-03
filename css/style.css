@@ -241,6 +241,7 @@ i, img, .clickable {
 }
 
 .message {
+  /* min-width: 100px; */
   max-width: calc(50% - 20px);
   padding: 5px 15px 15px;
   margin-bottom: 20px;
