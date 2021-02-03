@@ -117,8 +117,31 @@ var app = new Vue({
 
     // filtro per la ricerca
     contactsFilter() {
-      this.searchContacts = this.contacts.filter((element) =>{
-        return this.search.toLowerCase() == element.name.substring(0, this.search.length).toLowerCase();
+      const search = this.search.toLowerCase();
+
+      this.searchContacts = this.contacts.filter((element, index) =>{
+        let c = false;
+        const iLetters=[];
+        const e = element.name.toLowerCase()
+
+        // pusho in iLetters gli indici delle lettere uguali alla prima dell'input
+        for(let i = 0; i < e.length; i++) {
+          if (e[i] == search.charAt(0)) {
+            iLetters.push(i);
+          }
+        };
+
+        // per ogni indice che rispetta la condizione ottengo una sottostringa
+        iLetters.forEach((i) => {
+
+          // controllo per non superare la lungezza dell'array
+          if( (i + search.length ) <= element.name.length) {
+              c = element.name.toLowerCase().substring(i, i + search.length);
+          }
+
+        });
+
+        return search == c;
       });
     },
 

@@ -131,11 +131,12 @@ i, img, .clickable {
 
 .search-icon {
   padding: 10px 20px;
-  border-right: 1px solid lightgrey;
+  /* border-right: 1px solid lightgrey; */
 }
 
 .search-icon i {
   font-size: 20px;
+  cursor: default;
 }
 
 .search-box input {

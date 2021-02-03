@@ -74,11 +74,11 @@
           <div class="search-box">
 
             <div class="search-icon clickable">
-              <i class="fas fa-search" @click="contactsFilter"></i>
+              <i class="fas fa-search"></i>
             </div>
 
             <div class="search-input">
-              <input v-model="search" type="text" placeholder="Cerca o inizia una chat" @keyup.enter="contactsFilter">
+              <input v-model="search" type="text" placeholder="Cerca o inizia una chat" @keyup="contactsFilter">
             </div>
 
           </div>
