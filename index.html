@@ -147,14 +147,21 @@
           <!-- chat-middle -->
           <div class="chat-middle">
 
-            <div class="message" v-for="message in contact.messages" :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
+            <div class="message" v-for="message in contact.messages" :class="(message.status == 'sent') ? 'message-sent' : 'message-received'" @mouseleave="message.setting = false">
 
               <div class="message-text">
                 {{ message.text }}
               </div>
 
-              <div class="message-setting">
-                <i class="fas fa-chevron-down"></i>
+              <div class="message-setting" :class="(message.setting) ? 'active' : ''">
+
+                <i class="fas fa-chevron-down" @click="switchSettingMessage(message)"></i>
+
+                <div class="setting-options">
+                  <div class="option">Message info</div>
+                  <div class="option">Delete message</div>
+                </div>
+
               </div>
 
               <div class="message-time">

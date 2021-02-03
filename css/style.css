@@ -274,7 +274,33 @@ i, img, .clickable {
 }
 
 .message-setting {
+  position: relative;
   margin-left: 15px;
+}
+
+.message-setting .setting-options {
+  position:absolute;
+  top: 20px;
+  left: 0;
+  transform: translateX(-50%);
+  display: none;
+  white-space: nowrap;
+  font-size: 13px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px lightgray;
+  background: white;
+  color: grey;
+  z-index: 1;
+}
+
+.message-setting.active .setting-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-setting.active .setting-options .option {
+  padding: 5px;
+  cursor: pointer;
 }
 
 .message-time {
