@@ -201,6 +201,7 @@ i, img, .clickable {
 
 /* chat-top */
 .chat-top {
+  height: 89px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -232,6 +233,12 @@ i, img, .clickable {
 
 /* chat-middle */
 .chat-middle {
+  max-height: calc(100vh - 213px);
+  /*
+    border-t/b: 2px,
+    chat-top + chat-bottom: 171,
+    container-h: 100vh - 40px;
+  */
   padding: 20px 30px;
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
@@ -281,6 +288,7 @@ i, img, .clickable {
 
 /* chat-down */
 .chat-down {
+  height: 82px;
   padding: 10px 0;
   display: flex;
   align-items: center;
