@@ -156,6 +156,14 @@ var app = new Vue({
     // switch impostazioni messaggio
     switchSettingMessage(message) {
       message.setting ? message.setting = false : message.setting = true;
+    },
+
+    // elimina messaggio
+    deleteMessage(contact, index) {
+      contact.messages.splice(index, 1);
+      /*
+        Visualizzazione chat vuota
+      */
     }
 
   }
