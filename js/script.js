@@ -109,7 +109,6 @@ var app = new Vue({
 
     // accendere/spegnere notifiche
     switchNotification() {
-      console.log(this.notification);
       (this.notification) ? this.notification = false : this.notification = true;
     },
 

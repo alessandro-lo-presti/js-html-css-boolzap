@@ -285,7 +285,8 @@ i, img, .clickable {
   top: 20px;
   left: 0;
   transform: translateX(-50%);
-  display: none;
+  display: flex;
+  flex-direction: column;
   white-space: nowrap;
   font-size: 13px;
   border-radius: 3px;
@@ -295,14 +296,13 @@ i, img, .clickable {
   z-index: 1;
 }
 
-.message-setting.active .setting-options {
-  display: flex;
-  flex-direction: column;
-}
-
-.message-setting.active .setting-options .option {
+.message-setting .setting-options .option {
   padding: 5px;
   cursor: pointer;
+}
+
+.message-setting.active .setting-options .option:hover {
+  color: black;
 }
 
 .message-time {

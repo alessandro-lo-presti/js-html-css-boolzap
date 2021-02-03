@@ -153,12 +153,12 @@
                 {{ message.text }}
               </div>
 
-              <!-- capire perché non funziona sugli elementi aggiunti successivamente -->
-              <div class="message-setting" :class="(message.setting) ? 'active' : ''">
+              <div class="message-setting">
 
                 <i class="fas fa-chevron-down" @click="switchSettingMessage(message)"></i>
 
-                <div class="setting-options">
+                <!-- capire perché non funziona sugli elementi aggiunti successivamente -->
+                <div v-if="message.setting" class="setting-options">
                   <div class="option">Message info</div>
                   <div class="option" @click="deleteMessage(contact, index)">Delete message</div>
                 </div>
