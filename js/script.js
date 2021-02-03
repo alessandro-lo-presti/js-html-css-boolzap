@@ -132,7 +132,8 @@ var app = new Vue({
       const newMessage = {
         date: timeMessage,
         text: "ok",
-        status: "received"
+        status: "received",
+        setting: false
       };
       contact.messages.push(newMessage);
     },
@@ -144,7 +145,8 @@ var app = new Vue({
         const newMessage = {
           date: timeMessage,
           text: this.userMessage,
-          status: "sent"
+          status: "sent",
+          setting: false
         };
         contact.messages.push(newMessage);
         setTimeout(this.sendContactMessage, 1000, contact);
