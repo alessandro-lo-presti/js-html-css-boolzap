@@ -89,7 +89,7 @@
         <!-- contacts -->
         <div class="contacts">
 
-          <div v-for="(contact, index) in searchContacts" class="contact clickable" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
+          <div v-for="(contact) in searchContacts" class="contact clickable" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(contact)" >
 
             <div class="contact-img">
               <img :src="contact.img" alt="contact-img">

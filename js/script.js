@@ -133,12 +133,10 @@ var app = new Vue({
 
         // per ogni indice che rispetta la condizione ottengo una sottostringa
         iLetters.forEach((i) => {
-
           // controllo per non superare la lungezza dell'array
           if( (i + search.length ) <= element.name.length) {
               c = element.name.toLowerCase().substring(i, i + search.length);
           }
-
         });
 
         return search == c;
@@ -146,16 +144,14 @@ var app = new Vue({
     },
 
     // cambiare utente in chatbox
-    changeChat(index) {
-      if(this.contacts[index].current_chat != true) {
-
+    changeChat(contact) {
+      if(!contact.current_chat) {
         this.contacts.forEach((element) => {
           if(element.current_chat == true) {
             element.current_chat = false;
           }
         });
-
-        this.contacts[index].current_chat = true;
+        contact.current_chat = true;
       }
     },
 
@@ -196,7 +192,7 @@ var app = new Vue({
     deleteMessage(contact, index) {
       contact.messages.splice(index, 1);
       /*
-        Visualizzazione chat vuota
+        Problema chat vuota
       */
     }
 
