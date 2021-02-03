@@ -160,7 +160,7 @@ var app = new Vue({
       const timeMessage = moment().format('L') + " " + moment().format('LT');
       const newMessage = {
         date: timeMessage,
-        text: "ok",
+        text: "Ok",
         status: "received",
         setting: false
       };

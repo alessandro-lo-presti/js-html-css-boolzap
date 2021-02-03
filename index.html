@@ -31,7 +31,7 @@
           </div>
 
           <div class="user-name">
-            <span>{{ user.name}}</span>
+            <span>{{ user.name }}</span>
           </div>
 
           <div class="user-icons">
@@ -106,6 +106,7 @@
                 {{
                   contact.messages[contact.messages.length-1].date
                 }}
+                <!-- contact.messages[contact.messages.length-1].date.substring(contact.messages[contact.messages.length-1].date.length-5, contact.messages[contact.messages.length-1].date.length) -->
               </div>
             </div>
 
@@ -136,7 +137,10 @@
               </div>
 
               <div class="c-down">
-                Ultimo accesso alle
+                Ultimo accesso {{
+                  contact.messages[contact.messages.length-1].date
+                }}
+                <!-- contact.messages[contact.messages.length-1].date.substring(contact.messages[contact.messages.length-1].date.length-5, contact.messages[contact.messages.length-1].date.length) -->
               </div>
             </div>
 
