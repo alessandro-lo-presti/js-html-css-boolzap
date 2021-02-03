@@ -270,6 +270,8 @@ i, img, .clickable {
 }
 
 .message-text {
+  /* forse da togliere dopo aver visto cosa fa message-info */
+  min-width: 30px;
   word-break: break-word;
 }
 
