@@ -74,11 +74,11 @@
           <div class="search-box">
 
             <div class="search-icon clickable">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search" @click="contactsFilter"></i>
             </div>
 
             <div class="search-input">
-              <input type="text" placeholder="Cerca o inizia una chat">
+              <input v-model="search" type="text" placeholder="Cerca o inizia una chat" @keyup.enter="contactsFilter">
             </div>
 
           </div>
@@ -89,7 +89,7 @@
         <!-- contacts -->
         <div class="contacts">
 
-          <div v-for="(contact, index) in contacts" class="contact clickable" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
+          <div v-for="(contact, index) in searchContacts" class="contact clickable" :class="(contact.current_chat) ? 'active' : ''" @click="changeChat(index)" >
 
             <div class="contact-img">
               <img :src="contact.img" alt="contact-img">

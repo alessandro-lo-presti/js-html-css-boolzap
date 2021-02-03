@@ -7,6 +7,7 @@ var app = new Vue({
       img: "img/avatar_io.jpg"
     },
     userMessage: "",
+    search: "",
     contacts: [
       {
         name: "Michele",
@@ -100,16 +101,25 @@ var app = new Vue({
           }
         ]
       },
-    ]
+    ],
+    searchContacts: []
   },
   created() {
     moment.locale('it');
+    this.searchContacts = this.contacts;
   },
   methods: {
 
     // accendere/spegnere notifiche
     switchNotification() {
       (this.notification) ? this.notification = false : this.notification = true;
+    },
+
+    // filtro per la ricerca
+    contactsFilter() {
+      this.searchContacts = this.contacts.filter((element) =>{
+        return this.search.toLowerCase() == element.name.substring(0, this.search.length).toLowerCase();
+      });
     },
 
     // cambiare utente in chatbox
