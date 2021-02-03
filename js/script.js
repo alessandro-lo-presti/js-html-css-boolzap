@@ -129,15 +129,17 @@ var app = new Vue({
 
     // invio messaggio dell'utente
     sendUserMessage(contact) {
-      const timeMessage = moment().format('L') + " " + moment().format('LT');
-      const newMessage = {
-        date: timeMessage,
-        text: this.userMessage,
-        status: "sent"
-      };
-      contact.messages.push(newMessage);
-      setTimeout(this.sendContactMessage, 1000, contact);
-      this.userMessage = "";
+      if(this.userMessage != "") {
+        const timeMessage = moment().format('L') + " " + moment().format('LT');
+        const newMessage = {
+          date: timeMessage,
+          text: this.userMessage,
+          status: "sent"
+        };
+        contact.messages.push(newMessage);
+        setTimeout(this.sendContactMessage, 1000, contact);
+        this.userMessage = "";
+      }
     },
 
   }
