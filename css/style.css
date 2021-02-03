@@ -32,6 +32,7 @@ i, img, .clickable {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  border: 1px solid lightgrey;
 }
 
 .container > div {

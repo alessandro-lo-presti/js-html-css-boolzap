@@ -88,7 +88,7 @@ var app = new Vue({
             status:   'received'
           }
         ]
-      }
+      },
     ]
   },
   created() {
@@ -116,6 +116,17 @@ var app = new Vue({
       }
     },
 
+    // risposta del contatto
+    sendContactMessage(contact) {
+      const timeMessage = moment().format('L') + " " + moment().format('LT');
+      const newMessage = {
+        date: timeMessage,
+        text: "ok",
+        status: "received"
+      };
+      contact.messages.push(newMessage);
+    },
+
     // invio messaggio dell'utente
     sendUserMessage(contact) {
       const timeMessage = moment().format('L') + " " + moment().format('LT');
@@ -125,7 +136,9 @@ var app = new Vue({
         status: "sent"
       };
       contact.messages.push(newMessage);
-    }
+      setTimeout(this.sendContactMessage, 1000, contact);
+      this.userMessage = "";
+    },
 
   }
 });
