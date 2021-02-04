@@ -157,6 +157,7 @@ i, img, .clickable {
   padding: 10px;
   display: flex;
   font-size: 17px;
+  position: relative;
 }
 
 .contact.active {
@@ -180,12 +181,21 @@ i, img, .clickable {
 }
 
 .contact-chatbox > div {
-  width: 200px;
   font-size: 13px;
   color: grey;
+}
+
+.contact-chatbox .contact-last-message {
+  width: 200px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.contact-chatbox .contact-date-message {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 /* right */
