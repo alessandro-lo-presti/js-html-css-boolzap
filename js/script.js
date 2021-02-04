@@ -191,9 +191,6 @@ var app = new Vue({
     // elimina messaggio
     deleteMessage(contact, index) {
       contact.messages.splice(index, 1);
-      /*
-        Problema chat vuota
-      */
     }
 
   }

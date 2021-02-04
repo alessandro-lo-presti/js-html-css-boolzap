@@ -87,9 +87,8 @@ i, img, .clickable {
 
 .notifications-icon i {
   width: 57.5px;
-  /* margin-left: 15px; */
-  padding: 15px 10px;
   margin-left: 3.75px;
+  padding: 15px 10px;
   font-size: 30px;
   background-color: white;
   border-radius: 50%;
@@ -132,7 +131,6 @@ i, img, .clickable {
 
 .search-icon {
   padding: 10px 20px;
-  /* border-right: 1px solid lightgrey; */
 }
 
 .search-icon i {
@@ -236,11 +234,6 @@ i, img, .clickable {
 /* chat-middle */
 .chat-middle {
   max-height: calc(100vh - 213px);
-  /*
-    border-t/b: 2px,
-    chat-top + chat-bottom: 171,
-    container-h: 100vh - 40px;
-  */
   padding: 20px 30px;
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
@@ -251,7 +244,6 @@ i, img, .clickable {
 }
 
 .message {
-  /* min-width: 100px; */
   max-width: calc(50% - 20px);
   padding: 5px 15px 15px;
   margin-bottom: 20px;
@@ -272,7 +264,6 @@ i, img, .clickable {
 }
 
 .message-text {
-  /* forse da togliere dopo aver visto cosa fa message-info */
   min-width: 30px;
   word-break: break-word;
 }
@@ -303,7 +294,7 @@ i, img, .clickable {
   cursor: pointer;
 }
 
-.message-setting.active .setting-options .option:hover {
+.message-setting .setting-options .option:hover {
   color: black;
 }
 
@@ -311,7 +302,6 @@ i, img, .clickable {
   position: absolute;
   bottom: 1px;
   right: 12px;
-  /* transform: translateX(50%); */
   font-size: 9px;
   color: grey;
 }
