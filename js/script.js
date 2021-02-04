@@ -165,6 +165,9 @@ var app = new Vue({
         setting: false
       };
       contact.messages.push(newMessage);
+
+      const scroll = document.getElementById("chat");
+      scroll.scrollTop = scroll.scrollHeight;
     },
 
     // invio messaggio dell'utente
@@ -178,9 +181,14 @@ var app = new Vue({
           setting: false
         };
         contact.messages.push(newMessage);
+
+        const scroll = document.getElementById("chat");
+        scroll.scrollTop = scroll.scrollHeight;
+
         setTimeout(this.sendContactMessage, 1000, contact);
         this.userMessage = "";
       }
+
     },
 
     // switch impostazioni messaggio
