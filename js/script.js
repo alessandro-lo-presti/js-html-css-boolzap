@@ -108,6 +108,9 @@ var app = new Vue({
     moment.locale('it');
     this.searchContacts = this.contacts;
   },
+  updated() {
+    this.scrollBottom();
+  },
   methods: {
 
     // accendere/spegnere notifiche
@@ -165,9 +168,6 @@ var app = new Vue({
         setting: false
       };
       contact.messages.push(newMessage);
-
-      const scroll = document.getElementById("chat");
-      scroll.scrollTop = scroll.scrollHeight;
     },
 
     // invio messaggio dell'utente
@@ -181,9 +181,6 @@ var app = new Vue({
           setting: false
         };
         contact.messages.push(newMessage);
-
-        const scroll = document.getElementById("chat");
-        scroll.scrollTop = scroll.scrollHeight;
 
         setTimeout(this.sendContactMessage, 1000, contact);
         this.userMessage = "";
@@ -199,6 +196,12 @@ var app = new Vue({
     // elimina messaggio
     deleteMessage(contact, index) {
       contact.messages.splice(index, 1);
+    },
+
+    // scroll in basso dopo l'invio dei messaggi
+    scrollBottom() {
+      const scroll = document.getElementById("chat");
+      scroll.scrollTop = scroll.scrollHeight;
     }
 
   }
