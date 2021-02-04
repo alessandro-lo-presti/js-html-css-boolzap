@@ -144,8 +144,12 @@ var app = new Vue({
           // per ogni indice che rispetta la condizione ottengo una sottostringa
           iLetters.forEach((i) => {
             // controllo per non superare la lungezza dell'array
-            if( (i + search.length ) <= element.name.length) {
-              element.name.toLowerCase().substring(i, i + search.length) == search ? visibility = true : visibility = false;
+            if( (i + search.length ) <= element.name.length && !visibility) {
+
+              if(element.name.toLowerCase().substring(i, i + search.length) == search) {
+                visibility = true;
+              }
+
             }
           });
 
