@@ -13,6 +13,7 @@ var app = new Vue({
         name: "Michele",
         img: "img/avatar_1.jpg",
         current_chat: true,
+        visible: true,
         messages: [
           {
             date:   '10/01/2020   15:30',
@@ -37,6 +38,7 @@ var app = new Vue({
         name: "Fabio",
         img: "img/avatar_2.jpg",
         current_chat: false,
+        visible: true,
         messages: [
           {
             date:   '20/03/2020   16:30',
@@ -62,6 +64,7 @@ var app = new Vue({
         name: "Samuele",
         img: "img/avatar_3.jpg",
         current_chat: false,
+        visible: true,
         messages: [
           {
             date:   '28/03/2020   10:10',
@@ -86,6 +89,7 @@ var app = new Vue({
         name: "Giorgio",
         img: "img/avatar_4.jpg",
         current_chat: false,
+        visible: true,
         messages: [
           {
             date:   '10/01/2020   15:30',
@@ -106,7 +110,6 @@ var app = new Vue({
   },
   created() {
     moment.locale('it');
-    this.searchContacts = this.contacts;
   },
   updated() {
     this.scrollBottom();
@@ -122,27 +125,33 @@ var app = new Vue({
     contactsFilter() {
       const search = this.search.toLowerCase();
 
-      this.searchContacts = this.contacts.filter((element, index) =>{
-        let c = false;
-        const iLetters=[];
-        const e = element.name.toLowerCase()
+      this.searchContacts = this.contacts.filter((element) =>{
+        if(search == ""){
+          element.visible = true;
+        }
+        else {
+          let visibility = false;
+          const iLetters=[];
+          const e = element.name.toLowerCase()
 
-        // pusho in iLetters gli indici delle lettere uguali alla prima dell'input
-        for(let i = 0; i < e.length; i++) {
-          if (e[i] == search.charAt(0)) {
-            iLetters.push(i);
-          }
-        };
+          // pusho in iLetters gli indici delle lettere uguali alla prima dell'input
+          for(let i = 0; i < e.length; i++) {
+            if (e[i] == search.charAt(0)) {
+              iLetters.push(i);
+            }
+          };
 
-        // per ogni indice che rispetta la condizione ottengo una sottostringa
-        iLetters.forEach((i) => {
-          // controllo per non superare la lungezza dell'array
-          if( (i + search.length ) <= element.name.length) {
-              c = element.name.toLowerCase().substring(i, i + search.length);
-          }
-        });
+          // per ogni indice che rispetta la condizione ottengo una sottostringa
+          iLetters.forEach((i) => {
+            // controllo per non superare la lungezza dell'array
+            if( (i + search.length ) <= element.name.length) {
+              element.name.toLowerCase().substring(i, i + search.length) == search ? visibility = true : visibility = false;
+            }
+          });
 
-        return search == c;
+          element.visible = visibility;
+        }
+
       });
     },
 
