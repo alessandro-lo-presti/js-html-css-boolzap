@@ -253,6 +253,15 @@ i, img, .clickable {
   flex-direction: column;
 }
 
+.chat-middle::after {
+  content: ".";
+  display: block;
+  flex-basis: 20px;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+}
+
 .message {
   max-width: calc(50% - 20px);
   padding: 5px 15px 15px;
